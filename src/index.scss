@@ -1,0 +1,84 @@
+@import './scss/assets/colors';
+@import './scss/assets/reset';
+html {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.calendar-wrapper {
+    padding: 30px;
+    background-color: var(--accent-lavender);
+}
+
+.react-calendar {
+    background-color: var(--white);
+    border-radius: 40px;
+    overflow: hidden;
+    width: 80%;
+    max-width: 80%;
+    margin: 0 auto;
+    height: calc(100vh - 60px);
+    padding: 20px;
+    &__navigation {
+        height: 80px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        font-size: 18px;
+    }
+    &__navigation__arrow {
+        height: 50px;
+        width: 50px;
+    }
+    &__navigation__label {
+        height: 100%;
+    }
+    &__viewContainer {
+        height: calc(100% - 100px);
+    }
+    &__month-view {
+        height: 100%;
+        div {
+            height: 100%;
+        }
+    }
+    &__month-view__weekdays {
+        height: 20px !important;
+        margin-bottom: 40px;
+    }
+    &__month-view__days {
+        height: calc(100% - 60px) !important;
+    }
+    &__tile {
+        border-radius: 20px;
+        font-size: 20px;
+        transition: background 0.3s ease-in-out;
+        &:enabled {
+            &:hover {
+                box-shadow: 0 0 0 2px var(--violet);
+                background: transparent;
+            }
+        }
+        &.react-calendar__tile--active {
+            background-color: var(--violet);
+            &:focus {
+                background-color: var(--violet);
+            }
+            &:enabled {
+                &:hover {
+                    background-color: var(--light-violet);
+                    box-shadow: none;
+                }
+            }
+        }
+        &.react-calendar__tile--now {
+            background-color: var(--light-blue);
+            &:enabled {
+                &:hover {
+                    background-color: var(--light-violet);
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+}
