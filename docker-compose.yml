@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  frontendair:
+    build: .
+    restart: always
+    container_name: frontendair
+    ports:
+      - '7777:7777'
+    volumes:
+      - /app/node_modules
+      - ./:/app
